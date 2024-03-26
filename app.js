@@ -1,10 +1,11 @@
-console.log('Web serverni boshlash');
+console.log("Web serverni boshlash");
 const express = require("express");
 const app = express();
+const router = require("./router");
 
-// MongoDB chaqirish
-const db = require("./server").db();
-const mongodb = require("mongodb");
+
+
+
 
 
 // 1: Kirish 
@@ -19,6 +20,8 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 
 // 4 Routing code
+app.use("/", router); // for restAPI ::: har qanday kelgan requestni router filega yubor;
+
 
 
 module.exports = app;
